@@ -2,10 +2,10 @@ package org.asiregar310.javalib.fluentvalidator;
 
 import java.text.MessageFormat;
 
-public class DoubleValidatorBase extends BaseTypeValidator {
-    private Double prop;
+public class IntegerValidator extends BaseTypeValidator {
+    private Integer prop;
 
-    public DoubleValidatorBase(Validator validator, Double prop, String name) {
+    public IntegerValidator(Validator validator, Integer prop, String name) {
         super(validator, name);
         this.prop = prop;
     }
@@ -18,7 +18,7 @@ public class DoubleValidatorBase extends BaseTypeValidator {
         return this.validator;
     }
 
-    public Validator minValue(Double limit){
+    public Validator minValue(int limit){
         mustNotNull();
         if (isValid())
             if (this.prop < limit)
@@ -27,22 +27,12 @@ public class DoubleValidatorBase extends BaseTypeValidator {
         return this.validator;
     }
 
-    public Validator maxValue(Double limit){
+    public Validator maxValue(int limit){
         mustNotNull();
         if (isValid())
             if (this.prop > limit)
                 message =  MessageFormat.format("Maximum value of {0} is {1}.", this.name, limit);
 
-        return this.validator;
-    }
-
-    public Validator mustGreaterThan(Double limit){
-        if (mustNotNull().isValid()) {
-            if (prop > limit)
-                return this.validator;
-        }
-
-        if (this.isValid()) message = "is not greater than limit.";
         return this.validator;
     }
 }

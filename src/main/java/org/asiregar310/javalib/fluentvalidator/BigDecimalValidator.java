@@ -3,11 +3,11 @@ package org.asiregar310.javalib.fluentvalidator;
 import java.math.BigDecimal;
 import java.text.MessageFormat;
 
-public class BigDecimalValidatorBase extends BaseTypeValidator {
+public class BigDecimalValidator extends BaseTypeValidator {
 
     private BigDecimal prop;
 
-    public BigDecimalValidatorBase(Validator validator, BigDecimal prop, String name) {
+    public BigDecimalValidator(Validator validator, BigDecimal prop, String name) {
         super(validator, name);
         this.prop = prop;
     }

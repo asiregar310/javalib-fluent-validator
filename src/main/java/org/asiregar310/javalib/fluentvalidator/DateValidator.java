@@ -3,10 +3,10 @@ package org.asiregar310.javalib.fluentvalidator;
 import java.text.MessageFormat;
 import java.util.Date;
 
-public class DateValidatorBase extends BaseTypeValidator {
+public class DateValidator extends BaseTypeValidator {
     private Date prop;
 
-    public DateValidatorBase(Validator validator, Date prop, String name) {
+    public DateValidator(Validator validator, Date prop, String name) {
         super(validator, name);
         this.prop = prop;
     }

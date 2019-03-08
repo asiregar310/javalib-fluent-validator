@@ -6,13 +6,13 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class StringValidatorBase extends BaseTypeValidator {
+public class StringValidator extends BaseTypeValidator {
     private static final Pattern VALID_EMAIL_ADDRESS_REGEX =
             Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 
     private String prop;
 
-    public StringValidatorBase(Validator validator, String prop, String name) {
+    public StringValidator(Validator validator, String prop, String name) {
         super(validator, name);
         this.prop = prop;
     }
